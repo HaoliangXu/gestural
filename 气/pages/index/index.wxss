@@ -1,0 +1,41 @@
+.page-top{
+    width: 750rpx;
+    height: 594rpx;
+    background-repeat: no-repeat;
+    background-size: 750rpx 694rpx;
+    background-position:0 -40rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.text-info{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 32rpx;
+    top:400rpx;
+}
+.page-btn-wrap{
+    position: absolute;
+    top: 470rpx;
+    width: 100%;
+    text-align: center;
+}
+.page-btn{
+    position:relative;
+    margin:450rpx 20rpx;
+    padding:0;
+    border-radius: 32rpx;
+    box-sizing:border-box;
+    font-size:32rpx;
+    text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+    overflow:hidden;
+    display: inline-block;
+    width: 300rpx;
+    height: 85rpx;
+    background-color:#3A3636;
+    color: white;
+    line-height: 85rpx;
+}
