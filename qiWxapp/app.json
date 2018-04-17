@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/game/game",
+    "pages/index",
+    "pages/invite/invite",
+    "pages/load/load",
+    "pages/random/random",
+    "templete/gameView/game View",
+    "templete/gameInfo/game Info",
+    "templete/gameResult/gameResult",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
