@@ -1,10 +1,22 @@
+/**
+ * 
+ * @param {openId} id 
+ */
+const dbSql = require('../../lib/db/dbSql');
+
 function getUserInfo(id){
     return promise;
 };
-function media(url){
-    return promise;
+
+function getAllUserInfo(){
+     return new Promise();
+}
+
+function rank(callback){
+     getAllUserInfo().then((data)=>{
+         callback(data);
+        return object;
+     })
 };
-function rank(){
-    return promise;
-};
-module.exports={getUserInfo,media,rank}
+
+module.exports = {getUserInfo,rank}
