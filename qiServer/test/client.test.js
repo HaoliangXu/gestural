@@ -1,17 +1,17 @@
-let {should,assert,expect} = require('chai');
+let should = require('chai').should();
 const Client = require('../main/ws/client');
 describe('test class Client',function(){
-
+//should 是将对象的原型进行扩展，在对象上加个should，不可以在null/undefine上添加，要改变方式
     let client = new Client({id:1});
 
     it('test onUserInfo',function(){
         client.onUserInfo({uid:1,uname:'llisong',uavatar:'img.ipg'});
-        client.user.id.should.equal(1);
+        client.user.should.have.property(uid,1);
     });
 
     it('test onJoin',function(){
         client.onJoin({gameMode:0,roomId:null,again:0});
-        client.room.should.to.be.an('object');
+        client.room.should.be.an('object');
     });
 
     it('test onChoice',function(){

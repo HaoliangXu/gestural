@@ -1,22 +1,22 @@
-let {should,expect,assert} = require('chai');
+let should = require('chai').should();
 let {insert,select,update} = require('../lib/db/dbSql')
 describe('this a test of database',function(){
      it('insert should get object',function(done){
          insert("insert into player(uname) values('lisong')").then(function(data){
-             data.should.to.be.an('object');
+             data.should.be.an('object');
+             done();
          });
-         done();
      });
      it('select should get object',function(done){
         insert("select * from player where uname='lisong'").then(function(data){
-            data.should.to.be.an('object')
+            data.should.be.an('object');
+            done();
         })
-        done();
     });
      it('update should get object',function(done){
         insert("update player set uname='lisong1' where uname='lisong'").then(function(data){
-            data.should.to.be.an('object')
-        })
-        done();
+            data.should.be.an('object');
+            done();
+        });
      });
 })

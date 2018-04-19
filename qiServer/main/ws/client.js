@@ -17,6 +17,7 @@ class Client{
     }
     onChoice(data){
         return null;
+        ;
     }
     onLeave(data){
         return null;

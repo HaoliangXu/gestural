@@ -4,7 +4,7 @@ class Room{
         this.max_play_number;
         this.roomId;
     };
-    addclient(client){
+    addClient(client){
 
     };
     createRoom(){
@@ -24,6 +24,9 @@ class Room{
     };
     delClient(client){
        return client 
+    };
+    gameOver(){
+        
     }
 }
 module.exports=Room;

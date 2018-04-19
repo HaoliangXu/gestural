@@ -1,4 +1,4 @@
-let {should,expect,assert} = require('chai');
+let should = require('chai').should();
 let {getUserInfo,rank} = require('../main/http/util');
 describe('this is a http function of util',function(){
     it('test getUserInfo can get userInfo',function(done){

@@ -4,23 +4,24 @@ class Robot{
         this.user={uid:'',uname:'',uavatar:''}
         
     };
+    //初始化连接
     initConnect(){
         return null;
     }
-
+    //建立机器人
     buildRobot(){
         return null
     }
-
+    
     onJoin(){
-
+       
     }
 
     onChoice(){
 
     }
 
-    onleave(){
+    onLeave(){
 
     }
 
@@ -37,16 +38,16 @@ class Robot{
         return null;
     }
 
-    emit(message,data){//接到监听的事件
+    emit(message,data){//客户端发送消息，执行on的事件
         return null;
     }
 
     //模拟服务端->客户端
-    handle(eventMsg,handle){ //回调函数
+    handle(eventMsg,handle){ 
         return null;
     }
     
-    sendMsg(message,data){
+    sendMsg(message,data){//服务端发送消息，执行handle事件
         return null;
     }
 }
