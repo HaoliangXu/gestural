@@ -10,7 +10,21 @@ update()
 
 
 // 微信授权登陆
-login()
+function getUserInfo() {
+    Wechat.getCryptoData()
+      .then(d => {
+        return Wechat.getMyOpenid(d);
+      })
+      .then(d => {
+        console.log("从后端获取的openid", d.data);
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  }
+  
+  
+  getUserInfo()
 
 
 
