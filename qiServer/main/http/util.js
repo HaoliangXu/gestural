@@ -1,22 +1,17 @@
+const dbSql = require("../../lib/db/dbSql");
 /**
- * 
  * @param {openId} id 
+ * 得到用户信息
  */
-const dbSql = require('../../lib/db/dbSql');
 
 function getUserInfo(id){
-    return promise;
-};
-
-function getAllUserInfo(){
-     return new Promise();
+     return dbSql.select("player",id);
 }
+/**
+ * 排行
+ */
+function rank(){
+    return dbSql.select("player");
 
-function rank(callback){
-     getAllUserInfo().then((data)=>{
-         callback(data);
-        return object;
-     })
-};
-
-module.exports = {getUserInfo,rank}
+}
+module.exports = {getUserInfo,rank};

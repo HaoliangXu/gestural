@@ -14,7 +14,7 @@ describe('test class room',function(){
 
     it('test addclient',function(){
         room.addClient({id:1});
-        room.clients.should.be.an('array').and.to.have.lengthOf.winthin(0,3)
+        room.clients.should.be.an('array').and.to.have.lengthOf.within(0,3)
     }); 
 
     it('test findRoom',function(){

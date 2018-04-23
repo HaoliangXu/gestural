@@ -1,5 +1,5 @@
 let should = require('chai').should();
-let {insert,select,update} = require('../lib/db/dbSql')
+let {insert,select,update,handleInsert,handleUpdate} = require('../lib/db/dbSql')
 describe('this a test of database',function(){
      it('insert should get object',function(done){
          insert("insert into player(uname) values('lisong')").then(function(data){
@@ -19,4 +19,10 @@ describe('this a test of database',function(){
             done();
         });
      });
-})
+     it(' test handleinsert',function(){
+         handleInsert({li:1,name:'li'}).should.have.property('keys','li,name');
+     });
+     it('test handleUpdate',function(){
+         handleUpdate({name:'li',age:12}).should.equal("name='li',age=12")
+     })
+});
