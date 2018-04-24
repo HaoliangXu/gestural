@@ -2,26 +2,22 @@
  * 游戏主函数
  */
 import BackGround from './runtime/background'
-import BackGround from './runtime/result'
-import Player from './play/player'
-import Oponent from './play/oponent'
-import Msg from './play/msg'
-import Weapons from './play/weapons'
-import Music from './base/music'
+// import Result from './runtime/result'
+// import Player from './play/player'
+// import Oponent from './play/oponent'
+// import Msg from './play/msg'
+// import Weapons from './play/weapons'
+// import Music from './base/music'
 
 
-canvas.width = canvas.width 
-canvas.height = canvas.height 
-canvasAssociate.height = canvasAssociate.height 
-canvasAssociate.width = canvasAssociate.width 
 
 // 创建ctx，更改坐标原点到左下角
 let ctx = canvas.getContext('2d')
-    ctx.translate(0, canvas.height)
+//ctx.translate(0, canvas.height)
 
 // 副屏，用来绘制背景等不是一直需要刷新的东西
-let ctxAssociate = canvasAssociate.getContext('2d')
-    ctxAssociate.translate(0, canvasAssociate.height)
+// let ctxAssociate = canvasAssociate.getContext('2d')
+// ctxAssociate.translate(0, canvasAssociate.height)
 
 let preImg = ['images/test.png']
 
@@ -42,8 +38,13 @@ export default class Main {
     this.isStart = false
 
     //填充背景
+    this.bg = new BackGround(ctx)
 
     //渲染功能菜单button
+    this.bg.drawStart()
+    this.touchHandlerBind = this.touchHandler.bind(this)
+    canvas.addEventListener('touchstart', this.touchHandlerBind)
+
   
   }
 
@@ -53,7 +54,7 @@ export default class Main {
     let y = e.touches[0].clientY
 
     //button 区域
-    let area = this.xx.btnArea
+    let area = this.bg.btnArea
 
     if (x >= area.startX
         && x <= area.endX
@@ -62,8 +63,6 @@ export default class Main {
         //点击开始后 ，移除开始面板事件监听，开始主逻辑
         canvas.removeEventListener('touchstart', this.touchHandlerBind)
         this.start()
-
-        flag = false
       }
     }
 
@@ -71,7 +70,7 @@ export default class Main {
   start() {
     
     //建立websocket
-
+    console.log('hello')
     //寻找玩家
 
     //游戏主逻辑事件
@@ -91,8 +90,31 @@ export default class Main {
   //图片预加载
   preloading(preImgs, success) {
 
+     let loadLen = preImgs.length;
+
+        preImgs.forEach(function (img) {
+            let $img = new Image();
+            $img.onload = function () {
+                loading();
+            }
+            $img.src = img;
+        });
+
+        /**
+         * 判断是否完成加载
+         * @return {undefined}
+         */
+        function loading() {
+            console.log('LOADING... ' + (5 - loadLen + 1) * 20 + '%')
+            if (!--loadLen) {
+                console.log('加载完成')
+                success && success();
+            }
+        }
+    }
+
 
   }
 
   
-}
+
